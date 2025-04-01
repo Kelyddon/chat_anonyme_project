@@ -1,0 +1,13 @@
+<h2>Créer un salon</h2>
+<form action="index.php?page=room&action=create" method="POST">
+  <label for="room_name">Nom du salon :</label>
+  <input type="text" id="room_name" name="room_name" required />
+  <button type="submit">Créer</button>
+</form>
+
+<h2>Liste des salons</h2>
+<ul>
+  <?php foreach ($rooms as $room): ?>
+    <li><a href="index.php?page=message&room_id=<?= $room['id'] ?>"><?= $room['name'] ?></a></li>
+  <?php endforeach; ?>
+</ul>
